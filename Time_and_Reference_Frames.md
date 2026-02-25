@@ -3,12 +3,12 @@
 This page lists the reference frames and time standards used by each microlensing modeling code, with a focus on parallax calculations.
 The table below contains the input time system, how time is handled for parallax calculations, and the parallax reference frame (i.e., the observer position center used to compute the parallax displacement).
 
-| Code           | Input time system      | Time handling for parallax | Parallax frame        | Refs. |
-|----------------|------------------------|----------------------------|-----------------------|-------|
-| BAGLE          | MJD                    | BJD_TDB                    | Barycentric           | [1](https://ui.adsabs.harvard.edu/abs/2025arXiv251203364L/abstract) |
-| VBM / RTModel  | HJD' (JD' optional)    | Internally JD <-> HJD      | Barycentric           | [2](https://github.com/valboz/VBMicrolensing/blob/main/docs/python/Parallax.md)      |
-| MulensModel    | Any (if no parallax)   | BJD_TDB                    | Geocentric (`t0_par`) | [3](https://rpoleski.github.io/MulensModel/MulensModel.mulensdata.html)      |
-| pyLIMA         | JD                     | Depends on dataset?        | Geocentric?           | [4](https://pylima.readthedocs.io/en/latest/source/Conventions.html) |
+| Code           | Input time system      | Parallax time scale | Parallax ref. frame   | Refs. |
+|----------------|------------------------|---------------------|-----------------------|-------|
+| BAGLE          | MJD                    | BJD_TDB             | Barycentric           | [1](https://ui.adsabs.harvard.edu/abs/2025arXiv251203364L/abstract) |
+| VBM / RTModel  | HJD (JD optional)      | BJD_TDB             | Geocentric (`t0_par`) | [2](https://github.com/valboz/VBMicrolensing/blob/main/docs/python/Parallax.md)      |
+| MulensModel    | Any (if no parallax)   | BJD_TDB             | Geocentric (`t0_par`) | [3](https://rpoleski.github.io/MulensModel/MulensModel.mulensdata.html)      |
+| pyLIMA         | JD                     | Depends on dataset? | Geocentric?           | [4](https://pylima.readthedocs.io/en/latest/source/Conventions.html) |
 | eesunhong      | ... | ... | Heliocentric
 | muLAN          | HJD                    | MJD_TDB                    | ...
 | microlux       | ... | ... | ...
@@ -30,7 +30,7 @@ It is a coordinate time defined at the Solar System Barycenter and is the standa
 ### To-Do List:
 
 - Add missing info about eesunhong, muLAN, microlux and microjax
-- Double check with code developers
+- Double-check pyLIMA info with E. Bachelet
 - Make a separate table for survey conventions for `t_0`?
 <!-- - Write notes about the conventions and how to convert from one another -->
 
